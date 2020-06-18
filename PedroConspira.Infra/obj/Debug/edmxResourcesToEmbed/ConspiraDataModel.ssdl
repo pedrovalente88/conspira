@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="conspiradbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'conspiradb.dbo.ClienteProduto' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ClienteProduto">
+    <Key>
+      <PropertyRef Name="ClienteId" />
+      <PropertyRef Name="ProdutorId" />
+    </Key>
+    <Property Name="ClienteId" Type="int" Nullable="false" />
+    <Property Name="ProdutorId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Produto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ClienteProduto_Cliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClienteProduto">
+        <PropertyRef Name="ClienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClienteProduto_Produto">
+    <End Role="Produto" Type="Self.Produto" Multiplicity="1" />
+    <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClienteProduto">
+        <PropertyRef Name="ProdutorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="conspiradbModelStoreContainer">
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Produto" EntityType="Self.Produto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClienteProduto" EntityType="Self.ClienteProduto" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ClienteProduto].[ClienteId] AS [ClienteId], 
+    [ClienteProduto].[ProdutorId] AS [ProdutorId]
+    FROM [dbo].[ClienteProduto] AS [ClienteProduto]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_ClienteProduto_Cliente" Association="Self.FK_ClienteProduto_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClienteProduto_Produto" Association="Self.FK_ClienteProduto_Produto">
+      <End Role="Produto" EntitySet="Produto" />
+      <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

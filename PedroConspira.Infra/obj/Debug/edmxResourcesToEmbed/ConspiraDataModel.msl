@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="conspiradbModelStoreContainer" CdmEntityContainer="conspiradbEntities">
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="conspiradbModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Produto">
+      <EntityTypeMapping TypeName="conspiradbModel.Produto">
+        <MappingFragment StoreEntitySet="Produto">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ClienteProduto" TypeName="conspiradbModel.ClienteProduto" StoreEntitySet="ClienteProduto">
+      <EndProperty Name="Cliente">
+        <ScalarProperty Name="Id" ColumnName="ClienteId" />
+      </EndProperty>
+      <EndProperty Name="Produto">
+        <ScalarProperty Name="Id" ColumnName="ProdutorId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

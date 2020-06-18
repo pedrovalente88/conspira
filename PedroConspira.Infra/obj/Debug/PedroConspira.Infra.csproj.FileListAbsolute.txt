@@ -1,0 +1,14 @@
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Infra\bin\Debug\PedroConspira.Infra.dll.config
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Infra\bin\Debug\PedroConspira.Infra.dll
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Infra\bin\Debug\PedroConspira.Infra.pdb
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Infra\bin\Debug\EntityFramework.dll
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Infra\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Infra\bin\Debug\PedroConspira.Domain.dll
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Infra\bin\Debug\PedroConspira.Domain.pdb
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Infra\bin\Debug\EntityFramework.xml
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Infra\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Infra\obj\Debug\PedroConspira.Infra.csprojAssemblyReference.cache
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Infra\obj\Debug\PedroConspira.Infra.csproj.CoreCompileInputs.cache
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Infra\obj\Debug\PedroConspira.Infra.csproj.CopyComplete
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Infra\obj\Debug\PedroConspira.Infra.dll
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Infra\obj\Debug\PedroConspira.Infra.pdb

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="conspiradbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Produto" Relationship="Self.ClienteProduto" FromRole="Cliente" ToRole="Produto" />
+  </EntityType>
+  <EntityType Name="Produto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="Self.ClienteProduto" FromRole="Produto" ToRole="Cliente" />
+  </EntityType>
+  <Association Name="ClienteProduto">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+    <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="conspiradbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+    <EntitySet Name="Produto" EntityType="Self.Produto" />
+    <AssociationSet Name="ClienteProduto" Association="Self.ClienteProduto">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Produto" EntitySet="Produto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

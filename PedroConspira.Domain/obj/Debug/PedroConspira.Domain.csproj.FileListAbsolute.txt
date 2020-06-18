@@ -1,0 +1,6 @@
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Domain\bin\Debug\PedroConspira.Domain.dll
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Domain\bin\Debug\PedroConspira.Domain.pdb
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Domain\obj\Debug\PedroConspira.Domain.csprojAssemblyReference.cache
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Domain\obj\Debug\PedroConspira.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Domain\obj\Debug\PedroConspira.Domain.dll
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Domain\obj\Debug\PedroConspira.Domain.pdb

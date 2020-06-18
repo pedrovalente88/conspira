@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PedroConspira", "PedroConspira\PedroConspira.csproj", "{AD88D8E5-7936-405E-898E-E68EBE803939}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{7701BD33-AFF8-4C53-9DED-17DA686E9826}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{0C498E6E-A9D4-4F41-B1E8-E4D2FBB8920F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{EF56B0F8-0159-47E0-BBC1-49243A556286}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8A9AB55E-C5D2-4159-9CAB-11E7E3D4E353}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PedroConspira.Domain", "PedroConspira.Domain\PedroConspira.Domain.csproj", "{129B171C-56C3-4B81-B39A-F88D05B65161}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PedroConspira.Infra", "PedroConspira.Infra\PedroConspira.Infra.csproj", "{44CE843F-67FF-4AF7-870F-590B93A172DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{25C43EA8-C87F-48EE-9603-AE1305B29309}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{BCDA0445-67E4-49C8-871C-371B7CB88BE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PedroConspira.Application", "PedroConspira.Application\PedroConspira.Application.csproj", "{8EC6FEC1-386E-48FC-BAAA-D7E4E2A39181}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD88D8E5-7936-405E-898E-E68EBE803939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD88D8E5-7936-405E-898E-E68EBE803939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD88D8E5-7936-405E-898E-E68EBE803939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD88D8E5-7936-405E-898E-E68EBE803939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{129B171C-56C3-4B81-B39A-F88D05B65161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{129B171C-56C3-4B81-B39A-F88D05B65161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{129B171C-56C3-4B81-B39A-F88D05B65161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{129B171C-56C3-4B81-B39A-F88D05B65161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44CE843F-67FF-4AF7-870F-590B93A172DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44CE843F-67FF-4AF7-870F-590B93A172DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44CE843F-67FF-4AF7-870F-590B93A172DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44CE843F-67FF-4AF7-870F-590B93A172DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EC6FEC1-386E-48FC-BAAA-D7E4E2A39181}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EC6FEC1-386E-48FC-BAAA-D7E4E2A39181}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EC6FEC1-386E-48FC-BAAA-D7E4E2A39181}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EC6FEC1-386E-48FC-BAAA-D7E4E2A39181}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD88D8E5-7936-405E-898E-E68EBE803939} = {7701BD33-AFF8-4C53-9DED-17DA686E9826}
+		{129B171C-56C3-4B81-B39A-F88D05B65161} = {EF56B0F8-0159-47E0-BBC1-49243A556286}
+		{44CE843F-67FF-4AF7-870F-590B93A172DE} = {0C498E6E-A9D4-4F41-B1E8-E4D2FBB8920F}
+		{8EC6FEC1-386E-48FC-BAAA-D7E4E2A39181} = {BCDA0445-67E4-49C8-871C-371B7CB88BE7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3DE476EE-FE35-42DC-8B60-587FB6F589A8}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,9 @@
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Application\bin\Debug\PedroConspira.Application.dll
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Application\bin\Debug\PedroConspira.Application.pdb
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Application\obj\Debug\PedroConspira.Application.csprojAssemblyReference.cache
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Application\obj\Debug\PedroConspira.Application.csproj.CoreCompileInputs.cache
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Application\obj\Debug\PedroConspira.Application.dll
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Application\obj\Debug\PedroConspira.Application.pdb
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Application\bin\Debug\PedroConspira.Domain.dll
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Application\bin\Debug\PedroConspira.Domain.pdb
+C:\Users\Priscila\source\repos\PedroConspira\PedroConspira.Application\obj\Debug\PedroConspira.Application.csproj.CopyComplete
