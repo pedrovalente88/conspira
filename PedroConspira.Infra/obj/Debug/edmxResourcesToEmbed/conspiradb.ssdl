@@ -13,7 +13,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ClienteId" Type="int" Nullable="false" />
-    <Property Name="ProdutorId" Type="int" Nullable="false" />
+    <Property Name="ProdutoId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Produto">
     <Key>
@@ -42,7 +42,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="ClienteProduto">
-        <PropertyRef Name="ProdutorId" />
+        <PropertyRef Name="ProdutoId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -12,18 +12,13 @@ namespace PedroConspira.Infra
     using System;
     using System.Collections.Generic;
     
-    public partial class Cliente
+    public partial class ClienteProduto
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cliente()
-        {
-            this.ClienteProduto = new HashSet<ClienteProduto>();
-        }
-    
         public int Id { get; set; }
-        public string Nome { get; set; }
+        public int ClienteId { get; set; }
+        public int ProdutoId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ClienteProduto> ClienteProduto { get; set; }
+        public virtual Cliente Cliente { get; set; }
+        public virtual Produto Produto { get; set; }
     }
 }

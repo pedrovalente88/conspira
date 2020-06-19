@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace PedroConspira.Application.Interfaces
 {
-    public interface IProdutoAppService : IAppServiceBase<Produto>
+    public interface IClienteProdutoAppService : IAppServiceBase<ClienteProduto>
     {
-        bool NomeProdutoExiste(Produto produto);
     }
 }

@@ -12,16 +12,13 @@ namespace PedroConspira.Domain.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Produto
+    public partial class ClienteProduto
     {
-        public Produto()
-        {
-            this.ClienteProduto = new HashSet<ClienteProduto>();
-        }
-    
         public int Id { get; set; }
-        public string Nome { get; set; }
+        public int ClienteId { get; set; }
+        public int ProdutoId { get; set; }
     
-         public virtual ICollection<ClienteProduto> ClienteProduto { get; set; }
+        public virtual Cliente Cliente { get; set; }
+        public virtual Produto Produto { get; set; }
     }
 }

@@ -13,10 +13,11 @@ namespace PedroConspira.Infra.Repository
     {
         protected conspiradbEntities Db = new conspiradbEntities();
 
-        public void Add(TEntity obj)
+        public TEntity Add(TEntity obj)
         {
             Db.Set<TEntity>().Add(obj);
             Db.SaveChanges();
+            return obj;
         }
 
         public TEntity GetById(int id)
@@ -29,11 +30,12 @@ namespace PedroConspira.Infra.Repository
             return Db.Set<TEntity>().ToList();
         }
 
-        public void Update(TEntity obj)
+        public TEntity Update(TEntity obj)
         {
             Db.Set<TEntity>().AddOrUpdate(obj);
             //Db.Entry(obj).State = EntityState.Modified;
             Db.SaveChanges();
+            return obj;
         }
 
         public void Remove(TEntity obj)

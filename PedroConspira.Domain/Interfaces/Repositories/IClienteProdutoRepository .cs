@@ -2,7 +2,7 @@
 
 namespace PedroConspira.Domain.Interfaces.Repositories
 {
-    public interface IClienteRepository : IRepositoryBase<Cliente>
+    public interface IClienteProdutoRepository : IRepositoryBase<ClienteProduto>
     {
 
     }

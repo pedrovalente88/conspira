@@ -14,10 +14,5 @@ namespace PedroConspira.Domain.Services
         {
             _produtoRepository = produtoRepository;
         }
-
-        public IEnumerable<Produto> BuscarPorNome(string nome)
-        {
-            return _produtoRepository.BuscarPorNome(nome);
-        }
     }
 }

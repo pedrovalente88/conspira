@@ -17,11 +17,6 @@ namespace PedroConspira.Application
             _produtoRepository = produtoRepository;
         }
 
-        public IEnumerable<Produto> BuscarPorNome(string nome)
-        {
-            return _produtoRepository.BuscarPorNome(nome);
-        }
-
         public bool NomeProdutoExiste(Produto produto)
         {
             return _produtoRepository.GetAll().Where(x => x.Nome == produto.Nome && x.Id != produto.Id).Count() > 0;

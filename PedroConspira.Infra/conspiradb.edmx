@@ -12,15 +12,13 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nome" Type="nvarchar" MaxLength="150" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'conspiradb.dbo.ClienteProduto' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ClienteProduto">
           <Key>
-            <PropertyRef Name="ClienteId" />
-            <PropertyRef Name="ProdutorId" />
+            <PropertyRef Name="Id" />
           </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ClienteId" Type="int" Nullable="false" />
-          <Property Name="ProdutorId" Type="int" Nullable="false" />
+          <Property Name="ProdutoId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Produto">
           <Key>
@@ -49,19 +47,14 @@ warning 6002: The table/view 'conspiradb.dbo.ClienteProduto' does not have a pri
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="ClienteProduto">
-              <PropertyRef Name="ProdutorId" />
+              <PropertyRef Name="ProdutoId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="conspiradbModelStoreContainer">
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClienteProduto" EntityType="Self.ClienteProduto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Produto" EntityType="Self.Produto" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ClienteProduto" EntityType="Self.ClienteProduto" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ClienteProduto].[ClienteId] AS [ClienteId], 
-    [ClienteProduto].[ProdutorId] AS [ProdutorId]
-    FROM [dbo].[ClienteProduto] AS [ClienteProduto]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_ClienteProduto_Cliente" Association="Self.FK_ClienteProduto_Cliente">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="ClienteProduto" EntitySet="ClienteProduto" />
@@ -82,7 +75,17 @@ warning 6002: The table/view 'conspiradb.dbo.ClienteProduto' does not have a pri
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Produto" Relationship="Self.ClienteProduto" FromRole="Cliente" ToRole="Produto" />
+          <NavigationProperty Name="ClienteProduto" Relationship="Self.FK_ClienteProduto_Cliente" FromRole="Cliente" ToRole="ClienteProduto" />
+        </EntityType>
+        <EntityType Name="ClienteProduto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClienteId" Type="Int32" Nullable="false" />
+          <Property Name="ProdutoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_ClienteProduto_Cliente" FromRole="ClienteProduto" ToRole="Cliente" />
+          <NavigationProperty Name="Produto" Relationship="Self.FK_ClienteProduto_Produto" FromRole="ClienteProduto" ToRole="Produto" />
         </EntityType>
         <EntityType Name="Produto">
           <Key>
@@ -90,18 +93,43 @@ warning 6002: The table/view 'conspiradb.dbo.ClienteProduto' does not have a pri
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Cliente" Relationship="Self.ClienteProduto" FromRole="Produto" ToRole="Cliente" />
+          <NavigationProperty Name="ClienteProduto" Relationship="Self.FK_ClienteProduto_Produto" FromRole="Produto" ToRole="ClienteProduto" />
         </EntityType>
-        <Association Name="ClienteProduto">
-          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
-          <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
+        <Association Name="FK_ClienteProduto_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClienteProduto">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClienteProduto_Produto">
+          <End Role="Produto" Type="Self.Produto" Multiplicity="1" />
+          <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClienteProduto">
+              <PropertyRef Name="ProdutoId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <EntityContainer Name="conspiradbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+          <EntitySet Name="ClienteProduto" EntityType="Self.ClienteProduto" />
           <EntitySet Name="Produto" EntityType="Self.Produto" />
-          <AssociationSet Name="ClienteProduto" Association="Self.ClienteProduto">
+          <AssociationSet Name="FK_ClienteProduto_Cliente" Association="Self.FK_ClienteProduto_Cliente">
             <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClienteProduto_Produto" Association="Self.FK_ClienteProduto_Produto">
             <End Role="Produto" EntitySet="Produto" />
+            <End Role="ClienteProduto" EntitySet="ClienteProduto" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -118,6 +146,15 @@ warning 6002: The table/view 'conspiradb.dbo.ClienteProduto' does not have a pri
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ClienteProduto">
+            <EntityTypeMapping TypeName="conspiradbModel.ClienteProduto">
+              <MappingFragment StoreEntitySet="ClienteProduto">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="ProdutoId" ColumnName="ProdutoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Produto">
             <EntityTypeMapping TypeName="conspiradbModel.Produto">
               <MappingFragment StoreEntitySet="Produto">
@@ -126,14 +163,6 @@ warning 6002: The table/view 'conspiradb.dbo.ClienteProduto' does not have a pri
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="ClienteProduto" TypeName="conspiradbModel.ClienteProduto" StoreEntitySet="ClienteProduto">
-            <EndProperty Name="Cliente">
-              <ScalarProperty Name="Id" ColumnName="ClienteId" />
-            </EndProperty>
-            <EndProperty Name="Produto">
-              <ScalarProperty Name="Id" ColumnName="ProdutorId" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

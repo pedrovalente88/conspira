@@ -42,9 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppServiceBase.cs" />
+    <Compile Include="ClienteProdutoAppService.cs" />
     <Compile Include="ClienteAppService.cs" />
     <Compile Include="Interfaces\IAppServiceBase.cs" />
     <Compile Include="Interfaces\IClienteAppService.cs" />
+    <Compile Include="Interfaces\IClienteProdutoAppService.cs" />
     <Compile Include="Interfaces\IProdutoAppService.cs" />
     <Compile Include="ProdutoAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

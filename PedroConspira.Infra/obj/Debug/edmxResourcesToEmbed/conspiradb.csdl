@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="conspiradbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ClienteProduto" Relationship="Self.FK_ClienteProduto_Cliente" FromRole="Cliente" ToRole="ClienteProduto" />
+  </EntityType>
+  <EntityType Name="ClienteProduto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClienteId" Type="Int32" Nullable="false" />
+    <Property Name="ProdutoId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="Self.FK_ClienteProduto_Cliente" FromRole="ClienteProduto" ToRole="Cliente" />
+    <NavigationProperty Name="Produto" Relationship="Self.FK_ClienteProduto_Produto" FromRole="ClienteProduto" ToRole="Produto" />
+  </EntityType>
+  <EntityType Name="Produto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ClienteProduto" Relationship="Self.FK_ClienteProduto_Produto" FromRole="Produto" ToRole="ClienteProduto" />
+  </EntityType>
+  <Association Name="FK_ClienteProduto_Cliente">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClienteProduto">
+        <PropertyRef Name="ClienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClienteProduto_Produto">
+    <End Role="Produto" Type="Self.Produto" Multiplicity="1" />
+    <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClienteProduto">
+        <PropertyRef Name="ProdutoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="conspiradbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+    <EntitySet Name="ClienteProduto" EntityType="Self.ClienteProduto" />
+    <EntitySet Name="Produto" EntityType="Self.Produto" />
+    <AssociationSet Name="FK_ClienteProduto_Cliente" Association="Self.FK_ClienteProduto_Cliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClienteProduto_Produto" Association="Self.FK_ClienteProduto_Produto">
+      <End Role="Produto" EntitySet="Produto" />
+      <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

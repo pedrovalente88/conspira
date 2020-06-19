@@ -54,53 +54,45 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente.cs">
-      <DependentUpon>ConspiraDataModel.tt</DependentUpon>
+      <DependentUpon>conspiradb.tt</DependentUpon>
     </Compile>
-    <Compile Include="ConspiraDataModel.Context.cs">
+    <Compile Include="ClienteProduto.cs">
+      <DependentUpon>conspiradb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conspiradb.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ConspiraDataModel.Context.tt</DependentUpon>
+      <DependentUpon>conspiradb.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ConspiraDataModel.cs">
+    <Compile Include="conspiradb.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ConspiraDataModel.tt</DependentUpon>
+      <DependentUpon>conspiradb.tt</DependentUpon>
     </Compile>
-    <Compile Include="ConspiraDataModel.Designer.cs">
+    <Compile Include="conspiradb.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ConspiraDataModel.edmx</DependentUpon>
+      <DependentUpon>conspiradb.edmx</DependentUpon>
     </Compile>
     <Compile Include="Produto.cs">
-      <DependentUpon>ConspiraDataModel.tt</DependentUpon>
+      <DependentUpon>conspiradb.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ClienteProdutoRepository .cs" />
     <Compile Include="Repositories\ClienteRepository.cs" />
     <Compile Include="Repositories\ProdutoRepository.cs" />
     <Compile Include="Repositories\RespositoryBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="ConspiraDataModel.edmx">
+    <EntityDeploy Include="conspiradb.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ConspiraDataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>conspiradb.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ConspiraDataModel.edmx.diagram">
-      <DependentUpon>ConspiraDataModel.edmx</DependentUpon>
+    <None Include="conspiradb.edmx.diagram">
+      <DependentUpon>conspiradb.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ConspiraDataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ConspiraDataModel.edmx</DependentUpon>
-      <LastGenOutput>ConspiraDataModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ConspiraDataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ConspiraDataModel.edmx</DependentUpon>
-      <LastGenOutput>ConspiraDataModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -110,6 +102,18 @@
       <Project>{129b171c-56c3-4b81-b39a-f88d05b65161}</Project>
       <Name>PedroConspira.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="conspiradb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>conspiradb.edmx</DependentUpon>
+      <LastGenOutput>conspiradb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="conspiradb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>conspiradb.edmx</DependentUpon>
+      <LastGenOutput>conspiradb.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

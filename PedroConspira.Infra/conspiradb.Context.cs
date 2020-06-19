@@ -24,12 +24,13 @@ namespace PedroConspira.Infra
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
         //public virtual DbSet<Cliente> Cliente { get; set; }
+        //public virtual DbSet<ClienteProduto> ClienteProduto { get; set; }
         //public virtual DbSet<Produto> Produto { get; set; }
 
-        public System.Data.Entity.DbSet<PedroConspira.Domain.Entities.Cliente> Clientes { get; set; }
-
-        public System.Data.Entity.DbSet<PedroConspira.Domain.Entities.Produto> Produtos { get; set; }
+        public virtual DbSet<PedroConspira.Domain.Entities.Cliente> Cliente { get; set; }
+        public virtual DbSet<PedroConspira.Domain.Entities.ClienteProduto> ClienteProduto { get; set; }
+        public virtual DbSet<PedroConspira.Domain.Entities.Produto> Produto { get; set; }
     }
 }

@@ -18,9 +18,9 @@ namespace PedroConspira.Application
             _serviceBase = serviceBase;
         }
 
-        public void Add(TEntity obj)
+        public TEntity Add(TEntity obj)
         {
-            _serviceBase.Add(obj);
+            return _serviceBase.Add(obj);
         }
 
         public TEntity GetById(int id)
@@ -33,9 +33,9 @@ namespace PedroConspira.Application
             return _serviceBase.GetAll();
         }
 
-        public void Update(TEntity obj)
+        public TEntity Update(TEntity obj)
         {
-            _serviceBase.Update(obj);
+            return _serviceBase.Update(obj);
         }
 
         public void Remove(TEntity obj)
