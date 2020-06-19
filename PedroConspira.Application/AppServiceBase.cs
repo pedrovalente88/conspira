@@ -1,4 +1,5 @@
 ﻿using PedroConspira.Application.Interfaces;
+using PedroConspira.Domain.Interfaces.Repositories;
 using PedroConspira.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,9 @@ namespace PedroConspira.Application
 {
     public class AppServiceBase<TEntity> : IDisposable, IAppServiceBase<TEntity> where TEntity : class
     {
-        private readonly IServiceBase<TEntity> _serviceBase;
+        private readonly IRepositoryBase<TEntity> _serviceBase;
 
-        public AppServiceBase(IServiceBase<TEntity> serviceBase)
+        public AppServiceBase(IRepositoryBase<TEntity> serviceBase)
         {
             _serviceBase = serviceBase;
         }

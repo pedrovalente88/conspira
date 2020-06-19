@@ -25,7 +25,11 @@ namespace PedroConspira.Infra
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Cliente> Cliente { get; set; }
-        public virtual DbSet<Produto> Produto { get; set; }
+        //public virtual DbSet<Cliente> Cliente { get; set; }
+        //public virtual DbSet<Produto> Produto { get; set; }
+
+        public System.Data.Entity.DbSet<PedroConspira.Domain.Entities.Cliente> Clientes { get; set; }
+
+        public System.Data.Entity.DbSet<PedroConspira.Domain.Entities.Produto> Produtos { get; set; }
     }
 }
