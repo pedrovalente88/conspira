@@ -10,3 +10,9 @@ C:\Users\Priscila\Documents\GitHub\conspira\PedroConspira.Domain\obj\Debug\Pedro
 C:\Users\Priscila\Documents\GitHub\conspira\PedroConspira.Domain\obj\Debug\PedroConspira.Domain.csproj.CoreCompileInputs.cache
 C:\Users\Priscila\Documents\GitHub\conspira\PedroConspira.Domain\obj\Debug\PedroConspira.Domain.dll
 C:\Users\Priscila\Documents\GitHub\conspira\PedroConspira.Domain\obj\Debug\PedroConspira.Domain.pdb
+C:\Users\Priscila\Desktop\Conspira\conspira\PedroConspira.Domain\bin\Debug\PedroConspira.Domain.dll
+C:\Users\Priscila\Desktop\Conspira\conspira\PedroConspira.Domain\bin\Debug\PedroConspira.Domain.pdb
+C:\Users\Priscila\Desktop\Conspira\conspira\PedroConspira.Domain\obj\Debug\PedroConspira.Domain.csprojAssemblyReference.cache
+C:\Users\Priscila\Desktop\Conspira\conspira\PedroConspira.Domain\obj\Debug\PedroConspira.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Priscila\Desktop\Conspira\conspira\PedroConspira.Domain\obj\Debug\PedroConspira.Domain.dll
+C:\Users\Priscila\Desktop\Conspira\conspira\PedroConspira.Domain\obj\Debug\PedroConspira.Domain.pdb
