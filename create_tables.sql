@@ -1,0 +1,44 @@
+﻿CREATE TABLE [dbo].[Cliente](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nome] [nvarchar](150) NOT NULL,
+ CONSTRAINT [PK_Cliente] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Produto](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nome] [nvarchar](150) NOT NULL,
+ CONSTRAINT [PK_Produto] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[ClienteProduto](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ClienteId] [int] NOT NULL,
+	[ProdutoId] [int] NOT NULL,
+ CONSTRAINT [PK_ClienteProduto] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[ClienteProduto]  WITH CHECK ADD  CONSTRAINT [FK_ClienteProduto_Cliente] FOREIGN KEY([ClienteId])
+REFERENCES [dbo].[Cliente] ([Id])
+GO
+
+ALTER TABLE [dbo].[ClienteProduto] CHECK CONSTRAINT [FK_ClienteProduto_Cliente]
+GO
+
+ALTER TABLE [dbo].[ClienteProduto]  WITH CHECK ADD  CONSTRAINT [FK_ClienteProduto_Produto] FOREIGN KEY([ProdutoId])
+REFERENCES [dbo].[Produto] ([Id])
+GO
+
+ALTER TABLE [dbo].[ClienteProduto] CHECK CONSTRAINT [FK_ClienteProduto_Produto]
+GO
+GO
