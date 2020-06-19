@@ -8,6 +8,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{7701BD33-AFF8-4C53-9DED-17DA686E9826}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{0C498E6E-A9D4-4F41-B1E8-E4D2FBB8920F}"
+	ProjectSection(SolutionItems) = preProject
+		create_tables.sql = create_tables.sql
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{EF56B0F8-0159-47E0-BBC1-49243A556286}"
 EndProject
