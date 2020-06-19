@@ -3,6 +3,7 @@ using PedroConspira.Domain.Entities;
 using PedroConspira.Domain.Interfaces.Repositories;
 using PedroConspira.Domain.Interfaces.Services;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PedroConspira.Application
 {
@@ -19,6 +20,11 @@ namespace PedroConspira.Application
         public IEnumerable<Produto> BuscarPorNome(string nome)
         {
             return _produtoRepository.BuscarPorNome(nome);
+        }
+
+        public bool NomeProdutoExiste(Produto produto)
+        {
+            return _produtoRepository.GetAll().Where(x => x.Nome == produto.Nome && x.Id != produto.Id).Count() > 0;
         }
     }
 }

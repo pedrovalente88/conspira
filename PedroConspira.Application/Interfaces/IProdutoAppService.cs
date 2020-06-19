@@ -10,5 +10,6 @@ namespace PedroConspira.Application.Interfaces
     public interface IProdutoAppService : IAppServiceBase<Produto>
     {
         IEnumerable<Produto> BuscarPorNome(string nome);
+        bool NomeProdutoExiste(Produto produto);
     }
 }

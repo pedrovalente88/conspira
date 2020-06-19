@@ -9,5 +9,6 @@ namespace PedroConspira.Application.Interfaces
 {
     public interface IClienteAppService : IAppServiceBase<Cliente>
     {
+        bool NomeClienteExiste(Cliente cliente);
     }
 }

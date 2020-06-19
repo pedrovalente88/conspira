@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,8 @@ namespace PedroConspira.Infra.Repository
 
         public void Update(TEntity obj)
         {
-            Db.Entry(obj).State = EntityState.Modified;
+            Db.Set<TEntity>().AddOrUpdate(obj);
+            //Db.Entry(obj).State = EntityState.Modified;
             Db.SaveChanges();
         }
 
